@@ -7,8 +7,8 @@ from django.db.models.signals import post_delete
 from sorl import thumbnail
 from sorl.thumbnail.helpers import ThumbnailError
 
-ProductImage = get_model('catalogue', 'ProductImage')
-Category = get_model('catalogue', 'Category')
+ProductImage = get_model('catalogue', 'ProductImage', only_installed=False)
+Category = get_model('catalogue', 'Category', only_installed=False)
 
 
 def delete_image_files(sender, instance, **kwargs):

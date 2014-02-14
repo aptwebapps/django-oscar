@@ -6,7 +6,7 @@ from django.dispatch import receiver
 
 from oscar.core.loading import get_class
 
-Product = get_model('catalogue', 'Product')
+Product = get_model('catalogue', 'Product', only_installed=False)
 product_viewed = get_class('catalogue.signals', 'product_viewed')
 
 
